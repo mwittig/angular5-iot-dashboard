@@ -17,13 +17,13 @@ import { ExperimentalComponent } from '@app/components/experimental/experimental
 
 export function AuthLayout (component: any, route: string, options: any = {}): Route {
   return {
-    path: route,
+    path: '',
     ... options,
     // canActivate: environment.production ? [AuthGuard, DataSyncGuard] : [DataSyncGuard],
     component: LayoutComponent,
     children: [
       {
-        path: '',
+        path: route,
         component: component
       },
     ],
@@ -53,17 +53,17 @@ export const appRoutes: Routes = [
   AuthLayout (IndexComponent, 'index'),
   AuthLayout (LocationsComponent, 'locations'),
   AuthLayout (SettingsComponent, 'settings'),
-  AuthLayout (LocationSingleComponent, 'locations/edit/:id', {data: {mode: 'edit'}}),
-  AuthLayout (LocationSingleComponent, 'location/new', {data: {mode: 'new'}}),
-  AuthLayout (RolesComponent, 'roles'),
-  AuthLayout (ActivityComponent, 'activities'),
-  AuthLayout (DevicesComponent, 'devices'),
-  AuthLayout (DeviceSingleComponent, 'devices/create'),
-  AuthLayout (DeviceSingleComponent, 'devices/:id'),
-  AuthLayout (ExperimentalComponent, 'experimental'),
-  AuthLayout (DeviceSingleComponent, 'create-device-from-source/:sourceId'),
-  AuthLayout(DocsComponent, 'docs'),
-  AuthLayout(GalleryComponent, 'gallery')
+  // AuthLayout (LocationSingleComponent, 'locations/edit/:id', {data: {mode: 'edit'}}),
+  // AuthLayout (LocationSingleComponent, 'location/new', {data: {mode: 'new'}}),
+  // AuthLayout (RolesComponent, 'roles'),
+  // AuthLayout (ActivityComponent, 'activities'),
+  // AuthLayout (DevicesComponent, 'devices'),
+  // AuthLayout (DeviceSingleComponent, 'devices/create'),
+  // AuthLayout (DeviceSingleComponent, 'devices/:id'),
+  // AuthLayout (ExperimentalComponent, 'experimental'),
+  // AuthLayout (DeviceSingleComponent, 'create-device-from-source/:sourceId'),
+  // AuthLayout(DocsComponent, 'docs'),
+  // AuthLayout(GalleryComponent, 'gallery')
 ];
 
 export function createRoutes () {
